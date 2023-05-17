@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Sign In Test Suite" timestamp="2023-05-17T23:51:58" time="5.324" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Sign In Test Suite"/>
+      <property name="capabilities" value="firefox.113_0_1.mac"/>
+      <property name="file" value="file://./src/test/testLogout.js"/>
+    </properties>
+    <testcase classname="firefox.113_0_1.mac.Sign_In_Test_Suite" name="should sign in successfully" time="5.322">
+      <system-out><![CDATA[
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/window/maximize - {}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/url - {"url":"http://ec2-50-19-42-157.compute-1.amazonaws.com/"}
+RESULT: {}
+RESULT: {"url":"http://ec2-50-19-42-157.compute-1.amazonaws.com/"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element - {"using":"css selector","value":"#login-username"}
+RESULT: {"using":"css selector","value":"#login-username"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element/7d908c5e-b766-4d6f-9ced-c938fdac43a8/clear - {}
+RESULT: {}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element/7d908c5e-b766-4d6f-9ced-c938fdac43a8/value - {"text":"QuangHuy01"}
+RESULT: {"text":"QuangHuy01"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element - {"using":"css selector","value":"#login-password"}
+RESULT: {"using":"css selector","value":"#login-password"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element/20b722fb-b3ea-40dc-8bb6-375bce24fd11/clear - {}
+RESULT: {}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element/20b722fb-b3ea-40dc-8bb6-375bce24fd11/value - {"text":"Huyvff@111"}
+RESULT: {"text":"Huyvff@111"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/actions - {"actions":[{"id":"action1","type":"key","parameters":{},"actions":[{"type":"keyDown","value":""},{"type":"pause","duration":10},{"type":"keyUp","value":""}]}]}
+RESULT: {"actions":[{"id":"action1","type":"key","parameters":{},"actions":[{"type":"keyDown","value":""},{"type":"pause","duration":10},{"type":"keyUp","value":""}]}]}
+COMMAND: DELETE /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/actions - {}
+RESULT: {}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element - {"using":"css selector","value":"#logout-button"}
+RESULT: {"using":"css selector","value":"#logout-button"}
+COMMAND: POST /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/element/2c1a81de-6017-4750-b9dd-eeaf2cd9acba/click - {}
+RESULT: {}
+COMMAND: GET /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/screenshot - {}
+RESULT: {}
+COMMAND: GET /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071/title - {}
+RESULT: {}
+COMMAND: DELETE /session/0caa11a2-038e-4d58-922f-ca1ea1bf8071 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
