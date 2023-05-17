@@ -2,7 +2,7 @@
 export const config = {
 //   runner: "local",
 
-  specs: ["testLogout.js"],
+  specs: ["./testLogout.js"],
 
   exclude: [],
 
@@ -42,7 +42,11 @@ export const config = {
   connectionRetryCount: 3,
 
   //services: ["chromedriver"],
-  services: ['geckodriver'],
+//   services: ['geckodriver'],
+  services: [
+  'selenium-standalone',
+],
+
   framework: "mocha",
   //
   // The number of times to retry the entire specfile when it fails as a whole
