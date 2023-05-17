@@ -29,4 +29,4 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Run All Test 
-      run: npm run wdio -- --spec src/test/TestLogout.js
+      run: npm run wdio -- --spec ./src/test/TestLogout.js
