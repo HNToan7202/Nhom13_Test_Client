@@ -1,6 +1,6 @@
 // import allure from "allure-commandline";
 export const config = {
-  runner: "local",
+//   runner: "local",
 
   specs: ["testLogout.js"],
 
