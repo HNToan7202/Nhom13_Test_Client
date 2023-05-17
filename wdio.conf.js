@@ -33,7 +33,7 @@ export const config = {
 
   bail: 0,
 
-  baseUrl: "http://localhost",
+//   baseUrl: "http://localhost",
 
   waitforTimeout: 10000,
 
