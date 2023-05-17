@@ -2,7 +2,7 @@
 export const config = {
   runner: "local",
 
-  specs: ["./src/test/**/TestLogout.js"],
+  specs: ["./src/test/TestLogout.js"],
 
   exclude: [],
 
