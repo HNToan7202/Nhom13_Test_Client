@@ -18,6 +18,10 @@ export const config = {
       //browserName: "chrome",
       acceptInsecureCerts: true,
       browserName: 'firefox',
+      acceptInsecureCerts: true,
+      'moz:firefoxOptions': {
+      binary: '/usr/bin/firefox', // Đường dẫn đến tệp nhị phân của Firefox
+      },
       // // "ms:edgeOptions": {
       //   args: ["--headless", "--disable-gpu"],
       //   w3c: false,
