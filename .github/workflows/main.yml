@@ -1,7 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Test CI
+name: Cypress CI
 
 on:
   push:
@@ -10,15 +7,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  go-to-client:
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Switch to Client Directory
+      run: cd client
 
+  build:
+    needs: go-to-client
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -28,5 +30,7 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
+    - name: Build
+      run: npm run build
     - name: Run All Test 
-      run: npm run wdio
+      run: npx cypress run
