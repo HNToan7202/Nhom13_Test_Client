@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Test
-        run: npx jest Logout.test.js           
+        run: npx jest
 #       - name: Upload artifact
 #         uses: actions/upload-artifact@v2
 #         with:
