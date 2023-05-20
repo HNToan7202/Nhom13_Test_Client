@@ -17,11 +17,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./client
 
       - name: Build and push Docker image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/videodemo:latest .
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/videodemo:latest
-        working-directory: ./client
