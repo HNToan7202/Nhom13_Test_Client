@@ -19,10 +19,8 @@ jobs:
         run: npm install
 
       - name: Build and push Docker image
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+
         run: |
-          docker build -t $DOCKERHUB_USERNAME/videodemo:latest .
-          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push $DOCKERHUB_USERNAME/videodemo:latest
+          docker build -t 81quanghuy/videodemo:latest .
+          docker login -u 81quanghuy -p huyvff@111
+          docker push 81quanghuy/videodemo:latest
