@@ -1,0 +1,34 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Test Docker
+        run: docker --version
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./client
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/videodemo:latest .
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/videodemo:latest
+        working-directory: ./client
+
+      - name: Build and push Docker image Server
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/videodemoserver:latest -f video-editing-api/Dockerfile .
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/videodemoserver:latest
+        working-directory: ./server/video-editing-api
